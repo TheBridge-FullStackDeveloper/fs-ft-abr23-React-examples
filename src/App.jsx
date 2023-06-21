@@ -1,14 +1,21 @@
 import './App.css'
 import Header from './Header'
 import Footer from './Footer'
-import Main from './Main'
+import MainContent from './MainContent'
+import HooksUseState from './components/HooksUseState'
+import ShowText from './components/ShowText'
+import HooksUseStateObject from './components/HooksUseStateObject'
+
 
 function App() {
 
   return (
     <>
       <Header/>
-      <Main/>
+      <MainContent/>
+      <HooksUseState/>
+      <ShowText/>
+      <HooksUseStateObject/>
       <Footer/>
     </>
   )
