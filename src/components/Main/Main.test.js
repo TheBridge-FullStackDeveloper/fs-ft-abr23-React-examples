@@ -1,10 +1,10 @@
 import React from "react";
 import { shallow } from "enzyme";
-import DemoStateClass from "./DemoStateClass";
+import Main from "./Main";
 
-describe("DemoStateClass", () => {
+describe("Main", () => {
   test("matches snapshot", () => {
-    const wrapper = shallow(<DemoStateClass />);
+    const wrapper = shallow(<Main />);
     expect(wrapper).toMatchSnapshot();
   });
 });
