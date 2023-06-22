@@ -1,7 +1,16 @@
-import React from "react";
+import React from 'react'
+import "./DestinationItem.css";
 
-const DestinationItem = () => {
-  return <div>DestinationItem</div>;
-};
+//function DestinationItem(props) {
+  function DestinationItem({name,price,url}) {
+  return (
+    // <article>Tu destino es:{props.name} y precio:{props.price}</article>
+    <article>
+      <h3>{name}</h3>
+      <p> Precio:{price} </p>
+      <img className="img-destination" src={url} alt={name}/> 
+    </article> 
+      )
+}
 
-export default DestinationItem;
+export default DestinationItem
