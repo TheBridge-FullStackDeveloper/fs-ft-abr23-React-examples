@@ -6,18 +6,17 @@ import HooksUseState from './components/HooksUseState';
 import ShowText from './components/ShowText';
 import HooksUseStateObject from './components/HooksUseStateObject';
 import DestinationList from './components/DestinationList/DestinationList';
+import { BrowserRouter } from 'react-router-dom';
 
 
 function App() {
 
   return (
     <>
-      <Header />
-      <Main/>
-      <HooksUseState />
-      <ShowText />
-      <HooksUseStateObject />
-      <DestinationList/>
+      <BrowserRouter>
+        <Header />
+        <Main />
+      </BrowserRouter>
       <Footer />
     </>
   )
