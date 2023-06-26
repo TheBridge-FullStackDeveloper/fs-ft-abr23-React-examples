@@ -1,30 +1,83 @@
-import React from 'react'
+import {useState} from 'react';
 import DestinationItem from '../DestinationList/DestinationItem/DestinationItem';
-import bahamas from '../../assets/DestinationList/bahamas.jpg';
-import chiangmai from '../../assets/DestinationList/chiangmai.jpg';
-import griegas from '../../assets/DestinationList/islas-griegas.jpg';
-import benidorm from '../../assets/DestinationList/benidorm.jpg';
+
+import data from './data.js';
 
 function DestinationList() {
 
-  const data = [
-    {name:"Bahamas", price:"600", url:bahamas},
-    {name:"Chiang Mai", price:"800", url:chiangmai},
-    {name:"Islas griegas", price:"600", url:griegas},
-    {name:"Benidorm", price:"100", url:benidorm}
-  ]; 
+  const [destinations, setDestinations] = useState(data); // [{},{},{},{}] carga los datos del fichero
 
-  const paint = () => data.map((item,i) => <DestinationItem name={item.name} price={item.price} url={item.url} key={i}/>)
+
+  const paint = () => destinations.map((item,i) => <DestinationItem name={item.name} price={item.price} url={item.url} key={i} deleteItem={()=>deleteItem(i)}/>)
+
+
+  const handleSubmit = (e) =>{
+    e.preventDefault();
+    const name = e.target.name.value;
+    const price = e.target.price.value;
+    const url = e.target.url.value;
+
+    const new_dest = {name,price,url}; 
+
+    // Actualizar estado
+    const confirmated = confirm(`¿Deseas crear nuevo destino?: 
+      Name: ${name}, 
+      Price: ${price}, 
+      URL: ${url}
+    `);
+
+    confirmated?
+              setDestinations([...destinations, new_dest])
+              :alert("Operación anulada por user");
+  }
+
+  const deleteDestinations = () => {
+
+    const confirmated = confirm(`¿Deseas borrar todos los destinos?`);
+    
+    confirmated?
+    setDestinations([])
+    :alert("Operación anulada por user"); 
+  }
+  const reloadDestinations = () => {
+    
+    const confirmated = confirm(`¿Deseas recargar destinos?`);
+
+    confirmated?
+    setDestinations(data)
+    :alert("Operación anulada por user");
+  }
+
+  const deleteItem = (i) => { // i es posición 0,1,2,3,4 del [{},{},{},{}]
+
+      setDestinations(destinations.filter((item,j)=> i !== j));
+  }
   
   return (
     <section>
-        <h2>Mi lista de destinos</h2>
-        {/* <DestinationItem name="Bahamas" price="600"/>
-        <DestinationItem name="Chiang Mai" price="800"/>
-        <DestinationItem name="Islas griegas" price="500"/>
-        <DestinationItem name="Islas griegas" price="500"/> */}
+      <h2>Destinos</h2>
 
-        {paint()}
+      <h3>Crear destino</h3>
+
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="name">Nombre</label><br />
+        <input type="text" name="name" /><br />
+
+        <label htmlFor="price">Precio</label><br />
+        <input type="number" name="price" /><br />
+
+        <label htmlFor="url">URL imagen</label><br />
+        <input type="url" name="url"/><br />
+
+        <button type="submit">Send</button>
+      </form>
+
+      <button onClick={deleteDestinations}>Borrar todo</button>
+      <button onClick={reloadDestinations}>Recargar destinos</button>
+
+      <h3>Mi lista de destinos</h3>
+      {paint()}
+
     </section>
   )
 }

@@ -1,0 +1,16 @@
+ARBOL DE COMPONENTES:
+-------
+
+App
+    Header
+        Nav --> Barra de navegacion
+        Img --> Logo
+        Img --> User
+    MainContent
+        DestinationList
+            DestinationItem -> Bahamas
+            DestinationItem -> Chiang Mai
+            DestinationItem -> Islas griegas
+
+    Footer
+        Nav --> Redes sociales:Twitter,FB IG
