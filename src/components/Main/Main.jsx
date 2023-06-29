@@ -6,6 +6,9 @@ import HooksUseStateObject from "../HooksUseStateObject/HooksUseStateObject";
 import Home from '../Home';
 import About from '../About';
 import Staff from '../Staff';
+import SummerCourse from '../SummerCourse';
+import Topic from '../Topic';
+
 
 
 const Main = () => {
@@ -17,6 +20,8 @@ const Main = () => {
       <Route path="/destinations" element={<DestinationList />} />
       <Route path="/contact" element={<HooksUseStateObject />} />
       <Route path="/rating" element={<HooksUseState />} />
+      <Route path="/summercourse" element={<SummerCourse/>} />
+      <Route path="/topic" element={<Topic/>} />
 
     </Routes>
 
