@@ -8,7 +8,7 @@ import About from '../About';
 import Staff from '../Staff';
 import SummerCourse from '../SummerCourse';
 import Topic from '../Topic';
-
+import Profile from '../Profile';
 
 
 const Main = () => {
@@ -22,7 +22,7 @@ const Main = () => {
       <Route path="/rating" element={<HooksUseState />} />
       <Route path="/summercourse" element={<SummerCourse/>} />
       <Route path="/topic" element={<Topic/>} />
-
+      <Route path="/profile" element={<Profile/>} />
     </Routes>
 
 

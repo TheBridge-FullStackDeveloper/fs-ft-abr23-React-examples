@@ -8,16 +8,45 @@ import HooksUseStateObject from './components/HooksUseStateObject';
 import DestinationList from './components/DestinationList/DestinationList';
 import { BrowserRouter } from 'react-router-dom';
 
+import { useContext, useState } from 'react'
+
+// Contextos
+import { ThemeContext } from './context/themeContext'
+import { UserContext } from './context/userContext'
 
 function App() {
 
+//State
+const [theme, setTheme] = useState("night");
+const [username, setUsername] = useState('javy');
+
+// Actualizar tema
+const toggleTheme = ()=> theme=="day"? setTheme("night"):setTheme("day");
+
+// Actualizar nombre de usuario
+const updateUsername = (newUsername) =>setUsername(newUsername);
+
+const themeData = {
+  theme,
+  toggleTheme
+}
+
+const userData = {
+  username,
+  updateUsername
+}
+
   return (
     <>
-      <BrowserRouter>
-        <Header />
-        <Main />
-      </BrowserRouter>
-      <Footer />
+      <ThemeContext.Provider value={themeData}> 
+        <BrowserRouter>
+          <UserContext.Provider value={userData}>
+            <Header />
+            <Main />
+          </UserContext.Provider>
+        </BrowserRouter>
+        <Footer />
+      </ThemeContext.Provider> 
     </>
   )
 }
