@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 const Staff = () => {
-  
+
     const [pokemons, setPokemons] = useState([]);
 
     useEffect(() => {
@@ -14,12 +14,14 @@ const Staff = () => {
     }, []);
 
     return (
-      <ul>
-      {pokemons.length? pokemons.map(pokemon => <li>{pokemon.name}</li>):null}
+        <section>
+            <ul>
+                {pokemons.length ? pokemons.map(pokemon => <li>{pokemon.name}</li>) : null}
+            </ul>
+        </section>
 
-      </ul>
     );
-    
+
 }
- 
+
 export default Staff

@@ -1,5 +1,5 @@
 import React,{ useContext } from 'react'
-import './Footer.css'
+// import './Footer.css'
 
 import { ThemeContext } from '../../context/themeContext'
 
@@ -9,8 +9,7 @@ function Footer() {
 
   return (
     <footer className={`footer-${theme}`}>
-      <p>Esto es mi Footer!!!</p>
-      <button onClick={toggleTheme}>Cambia tema</button>
+      <p className={'footer-'+theme}>Powered with 💙 by Javier Espinosa</p>
       </footer>
   )
 }

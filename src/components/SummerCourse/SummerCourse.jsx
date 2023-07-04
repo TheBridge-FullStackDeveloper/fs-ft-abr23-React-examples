@@ -1,4 +1,8 @@
 import React, {useState, useEffect}from "react";
+import { FormControl, Input, Button, TextField, Card } from '@mui/material';
+
+
+
   export const SummerCourse= () => {
     //Iniciamos el estado formulario con un valor por defecto
      const [formulario, setFormulario] = useState({
@@ -41,13 +45,23 @@ import React, {useState, useEffect}from "react";
   }
 
     return(
-        <form onSubmit={handleSubmit}>
-            <input type="text" name='nombre'/>
-            <input type="email" name='email'/>
-            <input type="text" name='curso'/>
-            <textarea name="comentario" placeholder='Comentario' />
-            <button type='submit' >Enviar</button>
-        </form>
+      <section>
+        <Card sx={{
+          paddingTop:8,
+          paddingBottom: 0
+        }} className='formContainer'>
+        <FormControl onSubmit={handleSubmit}>
+            <h3>Pedir info de cursos</h3>
+            <Input sx={{margin:3}} type="text" name='nombre' placeholder="Nombre"/>
+            <Input sx={{margin:3}} type="email" name='email' placeholder="Email"/>
+            <Input sx={{margin:3}} type="text" name='curso' placeholder="Curso"/>
+            <TextField sx={{margin:3}} name="comentario" placeholder='Comentario' />
+            <Button sx={{margin:3}} type='submit' >Enviar</Button>
+        </FormControl>           
+        </Card>
+       
+      </section>
+
     )
 };
 export default SummerCourse;

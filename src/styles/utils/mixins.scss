@@ -1,0 +1,6 @@
+@import './variables.scss';
+
+@mixin standard-component{
+    background-color: $light-blue;
+    min-height:85vh
+}
