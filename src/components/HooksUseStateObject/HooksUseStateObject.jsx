@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+import { FormControl, Input, Button, TextField, Card, InputLabel } from '@mui/material';
+
 const HooksUseStateObject = () => {
   
     const [values, setValues] = useState({
@@ -25,18 +27,34 @@ const HooksUseStateObject = () => {
     }
 
     return (
-        <>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="email">Email</label>
-                <input name="email" type="email" onChange={handleChange}></input>
-                <br/><br/>
-                <label htmlFor="password">Password</label>
-                <input name="password" type="password" onChange={handleChange}></input>
+        <section>
+            <Card sx={{
+                minWidth:300,
+                minHeight:300,
+                paddingTop:8,
+                paddingBottom: 0}}>
+            <FormControl
+            sx={{
+                minHeight:300,
+                padding: 3
+            }}
+            onSubmit={handleSubmit}>
+                <div className='inputContainer'>
+                <InputLabel sx={{marginBottom:30}} htmlFor="email">Email</InputLabel>
+                <Input name="email" type="email" onChange={handleChange}></Input>
+                </div>
+                <div className='inputContainer'>
+                <InputLabel  htmlFor="password">Password</InputLabel>
+                <Input name="password" type="password" onChange={handleChange}></Input>                    
+                </div>
+                <Button>Login</Button>
+            </FormControl>                
+            </Card>
 
-                <button>Login</button>
-            </form>
-            <p>{JSON.stringify(values)}</p>
-        </>
+            <p>{JSON.stringify(values)}</p>            
+        </section>
+
+       
     );
     
 }

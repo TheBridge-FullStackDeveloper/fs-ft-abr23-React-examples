@@ -9,8 +9,7 @@ function Footer() {
 
   return (
     <footer className={`footer-${theme}`}>
-      <p className={'footer-'+theme}>Esto es mi Footer!!!</p>
-      <button onClick={toggleTheme}>Cambia tema</button>
+      <p className={'footer-'+theme}>Powered with 💙 by Javier Espinosa</p>
       </footer>
   )
 }

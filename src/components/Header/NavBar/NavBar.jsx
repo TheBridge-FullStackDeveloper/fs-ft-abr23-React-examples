@@ -20,9 +20,8 @@ const NavBar = () => {
       <li><Link className={'link-'+theme} to="/contact">Contact</Link></li>
       <li><Link className={'link-'+theme} to="/rating">Rating</Link></li>
       <li><Link className={'link-'+theme} to="/summercourse">Summer Course</Link></li>
-      <li><Link className={'link-'+theme} to="/topic">Top                         ic</Link></li>
+      <li><Link className={'link-'+theme} to="/topic">Topic</Link></li>
       <li><Link className={'link-'+theme} to="/profile">Profile</Link></li>
-
     </ul>
   </nav>;
 };

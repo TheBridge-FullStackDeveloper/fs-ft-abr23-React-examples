@@ -13,19 +13,11 @@
 .footer-day{
     @extend %footer-bar-basic;
     background-color:$light-orange;
-    color: $blue;
+    color: $dark-blue
 }
 
 .footer-night{
     @extend %footer-bar-basic;
     background-color: $dark-blue;
-    color: $light-orange
-}
-
-.footer-day{
-    color: $dark-blue
-}
-
-.footer-night{
     color: $light-blue
 }

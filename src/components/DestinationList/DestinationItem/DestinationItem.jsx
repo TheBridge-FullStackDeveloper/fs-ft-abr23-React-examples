@@ -19,7 +19,7 @@ import Typography from '@mui/material/Typography';
     //   <button onClick={deleteItem}>Borrar</button>
     // </article> 
 
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345, minWidth:345 }}>
     <CardMedia
       component="img"
       alt={name}
