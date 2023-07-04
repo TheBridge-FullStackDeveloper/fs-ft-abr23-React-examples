@@ -1,0 +1,13 @@
+@import '../utils/variables.scss';
+@import '../utils/mixins.scss';
+
+.home {
+    background-color: $light-blue;
+    min-height: 85vh;
+    &>h2{
+        margin-top: 0
+    }
+    &>img{
+        max-width: 800px;
+    }
+}

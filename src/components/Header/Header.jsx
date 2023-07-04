@@ -1,8 +1,10 @@
 import React,{ useContext } from 'react';
 import NavBar from './NavBar/NavBar';
-import './Header.css'
+// import './Header.css'
 import { ThemeContext } from '../../context/themeContext'
 import { UserContext } from '../../context/userContext'
+
+import { Button, Switch } from '@mui/material'
 
 function Header() {
 
@@ -13,15 +15,22 @@ function Header() {
 
   return (
     <header className={`header-${theme}`} >
-      <NavBar/>
-      <button onClick={toggleTheme}>Cambia tema</button>
+      <NavBar />
+      <Switch  sx={{
+        marginTop:0.8,
+        marginRight: 1
+      }}
+      defaultChecked onClick={toggleTheme}/>           
 
-      {username?
+      {/* <Button size="small" onClick={toggleTheme}> &#127749;&#127747; </Button> */}
+      {username ?
         <>
-          <p>Hola, {username}</p>
-          <button onClick={()=>updateUsername("")}>Logout</button>
+          <p className={'pUser-'+theme}>Hola, {username}</p>
+          <Button sx={{
+            margin: 1
+          }} className='logoutButton' onClick={() => updateUsername("")}>Logout</Button>
         </>
-      :""}
+        : ""}
 
     </header>
   )

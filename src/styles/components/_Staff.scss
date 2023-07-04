@@ -1,0 +1,11 @@
+@import '../utils/variables.scss';
+@import '../utils/mixins.scss';
+
+section{
+    @include standard-component;
+    &>ul{
+        margin: 0;
+        padding-top: 50px;
+        list-style: none;
+    }
+}

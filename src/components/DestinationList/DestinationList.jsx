@@ -76,7 +76,9 @@ function DestinationList() {
       <button onClick={reloadDestinations}>Recargar destinos</button>
 
       <h3>Mi lista de destinos</h3>
+      <section className='cardsContainer'>
       {paint()}
+      </section>
 
     </section>
   )
