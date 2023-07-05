@@ -9,6 +9,7 @@ import Staff from '../Staff';
 import SummerCourse from '../SummerCourse';
 import Topic from '../Topic';
 import Profile from '../Profile';
+import PruebaRedux from '../PruebaRedux';
 
 
 const Main = () => {
@@ -23,6 +24,7 @@ const Main = () => {
       <Route path="/summercourse" element={<SummerCourse/>} />
       <Route path="/topic" element={<Topic/>} />
       <Route path="/profile" element={<Profile/>} />
+      <Route path="/redux" element={<PruebaRedux/>} />
     </Routes>
 
 

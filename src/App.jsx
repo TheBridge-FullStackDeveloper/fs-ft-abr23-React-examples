@@ -1,4 +1,8 @@
-// import './App.css';
+import { useContext, useState } from 'react'
+import { BrowserRouter } from 'react-router-dom';
+import {Provider} from 'react-redux'
+import store from './redux/store'
+
 import Header from './components/Header/Header';
 import Footer from './components/Footer';
 import Main from './components/Main';
@@ -6,9 +10,7 @@ import HooksUseState from './components/HooksUseState';
 import ShowText from './components/ShowText';
 import HooksUseStateObject from './components/HooksUseStateObject';
 import DestinationList from './components/DestinationList/DestinationList';
-import { BrowserRouter } from 'react-router-dom';
 
-import { useContext, useState } from 'react'
 
 // Contextos
 import { ThemeContext } from './context/themeContext'
@@ -38,15 +40,17 @@ const userData = {
 
   return (
     <>
-      <ThemeContext.Provider value={themeData}> 
-        <BrowserRouter>
-          <UserContext.Provider value={userData}>
-            <Header />
-            <Main />
-          </UserContext.Provider>
-        </BrowserRouter>
-        <Footer />
-      </ThemeContext.Provider> 
+      <Provider store={store}>
+          <ThemeContext.Provider value={themeData}> 
+            <BrowserRouter>
+              <UserContext.Provider value={userData}>
+                <Header />
+                <Main />
+              </UserContext.Provider>
+            </BrowserRouter>
+            <Footer />
+          </ThemeContext.Provider> 
+        </Provider>
     </>
   )
 }

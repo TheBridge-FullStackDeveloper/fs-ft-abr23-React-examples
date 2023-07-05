@@ -22,6 +22,8 @@ const NavBar = () => {
       <li><Link className={'link-'+theme} to="/summercourse">Summer Course</Link></li>
       <li><Link className={'link-'+theme} to="/topic">Topic</Link></li>
       <li><Link className={'link-'+theme} to="/profile">Profile</Link></li>
+      <li><Link className={'link-'+theme} to="/redux">Redux</Link></li>
+
     </ul>
   </nav>;
 };
