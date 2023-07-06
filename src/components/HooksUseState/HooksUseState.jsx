@@ -15,11 +15,11 @@ const HooksUseState = () => {
     }
 
     return (
-        <>
+        <section>
             <button name='add' onClick={handleAddClick} >+</button>
             <h1>The value is: {count}</h1>
             <button name='sub' onClick={handleSubClick} >-</button>
-        </>
+        </section>
     );
     
 }

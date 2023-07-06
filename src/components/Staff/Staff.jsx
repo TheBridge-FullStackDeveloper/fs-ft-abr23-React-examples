@@ -8,6 +8,7 @@ const Staff = () => {
         const getPokemons = async () => {
             const resp = await fetch('https://pokeapi.co/api/v2/pokemon');
             const data = await resp.json();
+            console.log(data);
             setPokemons(data.results); // [{},{},{},{},{}]
         }
         getPokemons();
@@ -16,7 +17,10 @@ const Staff = () => {
     return (
         <section>
             <ul>
-                {pokemons.length ? pokemons.map(pokemon => <li>{pokemon.name}</li>) : null}
+                {pokemons.length ? pokemons.map(pokemon => <li className='pokemon'>
+                    <p>{pokemon.name}</p>
+                    <p></p>
+                    </li>) : null}
             </ul>
         </section>
 

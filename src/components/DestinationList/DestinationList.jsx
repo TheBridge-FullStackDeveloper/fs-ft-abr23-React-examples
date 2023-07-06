@@ -1,5 +1,7 @@
 import {useState} from 'react';
 import DestinationItem from '../DestinationList/DestinationItem/DestinationItem';
+import { FormControl, Input, Button, TextField, Card, InputLabel } from '@mui/material';
+
 
 import data from './data.js';
 
@@ -10,6 +12,9 @@ function DestinationList() {
 
   const paint = () => destinations.map((item,i) => <DestinationItem name={item.name} price={item.price} url={item.url} key={i} deleteItem={()=>deleteItem(i)}/>)
 
+  const styleButton = {
+    margin: 1
+  }
 
   const handleSubmit = (e) =>{
     e.preventDefault();
@@ -60,20 +65,23 @@ function DestinationList() {
       <h3>Crear destino</h3>
 
       <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Nombre</label><br />
-        <input type="text" name="name" /><br />
+        <InputLabel htmlFor="name">Nombre</InputLabel>
+        <Input type="text" name="name" />
 
-        <label htmlFor="price">Precio</label><br />
-        <input type="number" name="price" /><br />
+        <InputLabel htmlFor="price">Precio</InputLabel>
+        <Input type="number" name="price" />
 
-        <label htmlFor="url">URL imagen</label><br />
-        <input type="url" name="url"/><br />
+        <InputLabel htmlFor="url">URL imagen</InputLabel>
+        <Input type="url" name="url"/>
 
-        <button type="submit">Send</button>
+        <Button type="submit">Send</Button>
       </form>
 
-      <button onClick={deleteDestinations}>Borrar todo</button>
-      <button onClick={reloadDestinations}>Recargar destinos</button>
+      <div className='buttonsContainer'>
+      <Button sx={styleButton} onClick={deleteDestinations}>Borrar todo</Button>
+      <Button sx={styleButton} onClick={reloadDestinations}>Recargar destinos</Button>        
+      </div>
+
 
       <h3>Mi lista de destinos</h3>
       <section className='cardsContainer'>

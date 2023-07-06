@@ -1,0 +1,9 @@
+@import '../utils/variables.scss';
+@import '../utils/mixins.scss';
+
+.about{
+    @include standard-component;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

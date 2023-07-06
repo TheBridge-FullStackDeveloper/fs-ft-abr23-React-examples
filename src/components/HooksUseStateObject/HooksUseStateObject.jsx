@@ -1,9 +1,17 @@
 import { useState } from 'react';
 
-import { FormControl, Input, Button, TextField, Card, InputLabel } from '@mui/material';
+import {Input, Button, Card, InputLabel } from '@mui/material';
 
 const HooksUseStateObject = () => {
-  
+
+    const styles = {
+        minWidth: 300,
+        minHeight: 200,
+        paddingTop: 2,
+        paddingBottom: 0,
+        border: 'solid'
+    }
+
     const [values, setValues] = useState({
         email: '',
         password: ''
@@ -23,40 +31,29 @@ const HooksUseStateObject = () => {
         //..
         //..
         //Enviar el POST
-        alert("Datos enviados de: "+values.email);
+        alert("Datos enviados de: " + values.email);
     }
 
     return (
         <section>
-            <Card sx={{
-                minWidth:300,
-                minHeight:300,
-                paddingTop:8,
-                paddingBottom: 0}}>
-            <FormControl
-            sx={{
-                minHeight:300,
-                padding: 3
-            }}
-            onSubmit={handleSubmit}>
-                <div className='inputContainer'>
-                <InputLabel sx={{marginBottom:30}} htmlFor="email">Email</InputLabel>
-                <Input name="email" type="email" onChange={handleChange}></Input>
-                </div>
-                <div className='inputContainer'>
-                <InputLabel  htmlFor="password">Password</InputLabel>
-                <Input name="password" type="password" onChange={handleChange}></Input>                    
-                </div>
-                <Button>Login</Button>
-            </FormControl>                
+            <Card sx={styles}>
+                <form
+                    onSubmit={handleSubmit}>
+                    <InputLabel sx={{ marginLeft: 2, marginRight: 2, marginBottom: 1 }} htmlFor="email">Email</InputLabel>
+                    <Input sx={{ marginLeft: 2, marginRight: 2, marginBottom: 1 }} name="email" type="email" onChange={handleChange}></Input>
+                    <InputLabel sx={{ marginLeft: 2, marginRight: 2, marginBottom: 1 }} htmlFor="password">Password</InputLabel>
+                    <Input sx={{ marginLeft: 2, marginRight: 2, marginBottom: 1 }} name="password" type="password" onChange={handleChange}></Input>
+                    <Button>Login</Button>
+                </form>
             </Card>
 
-            <p>{JSON.stringify(values)}</p>            
+            <p>Email: {values.email}</p>
+            <p>Password: {values.password}</p>
         </section>
 
-       
+
     );
-    
+
 }
- 
+
 export default HooksUseStateObject

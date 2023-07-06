@@ -1,6 +1,7 @@
 import { useContext, useState } from 'react'
 import { UserContext } from '../../context/userContext'
 import homeImg from '../../assets/pexels-ross-peebles-731648.jpg'
+import { FormControl, Input, Button, TextField, Card, InputLabel } from '@mui/material';
 
 function Home() {
   // Consume contexto
@@ -22,10 +23,10 @@ function Home() {
     <div className='home'>
       <h2>Update Username</h2>
       <form onSubmit={handleSubmit}>
-        <input type="text" value={newUsername} onChange={handleInputChange} />
-        <button type="submit">Update</button>
+        <Input type="text" value={newUsername} onChange={handleInputChange} />
+        <Button type="submit">Update</Button>
       </form>
-      <img src={homeImg} alt="" srcset="" />
+      <img src={homeImg} alt="" />
     </div>
   );
 }
