@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {Input, Button, Card, InputLabel } from '@mui/material';
 
 const FormProfile = ({ setMessage }) => {
   const [inputValue, setInputValue] = useState('');
@@ -13,8 +14,8 @@ const FormProfile = ({ setMessage }) => {
 
   return (
     <div>
-      <input type="text" value={inputValue} onChange={handleChange} />
-      <button onClick={handleClick}>Enviar mensaje</button>
+      <Input type="text" value={inputValue} onChange={handleChange} />
+      <Button onClick={handleClick}>Enviar mensaje</Button>
     </div>
   );
 };

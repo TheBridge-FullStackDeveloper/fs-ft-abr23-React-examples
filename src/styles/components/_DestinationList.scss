@@ -1,3 +1,5 @@
+@import '../utils/variables.scss';
+
 .cardsContainer{
     display:flex;
     flex-direction:column;
@@ -7,4 +9,17 @@
 
 h2{
     margin-top:0
+}
+
+.buttonsContainer{
+    background-color: white;
+    border-radius: 4px;
+}
+
+form{
+    background-color: white;
+    padding: 10px;
+    margin: 20px;
+    border: solid 1px;
+    border-radius: 4px;
 }
